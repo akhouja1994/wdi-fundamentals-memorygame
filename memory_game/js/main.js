@@ -1,22 +1,22 @@
-alert('Hello, friends.');
 var cards = ["queen","king","queen","king"];
 var cardsInPlay = [];
-var cardOne = cards[0];
-var cardTwo = cards[1];
-var cardThree = cards[2];
-var cardFour = cards[3];
-cardsInPlay.push(cardOne);
-console.log("Up and running!"); 
-console.log("User flipped " + cardsInPlay[0]);
-cardsInPlay.push(cardTwo);
-console.log("User flipped " + cardsInPlay[1]);
-if (cardsInPlay[0]===cardsInPlay[1])
+var checkForMatch =function(memorey)
 {
-	alert("You found a match!");
+		if (memorey[0]===memorey[1])
+		{
+			console.log("You found a match!");
+		}
+
+	else
+		{
+			console.log("Sorry, try again");
+		}
 }
-else
-{
-	cardsInPlay=[]
-	alert("Sorry, try again");
-}
-console.log(cardsInPlay[0]);
+var flipCard = function (cardId)
+	{
+	cardsInPlay.push(cards[cardId]);
+	console.log("user flipped" + cards[cardId]);
+	}
+flipCard(0);
+flipCard(1);
+checkForMatch(cardsInPlay);
